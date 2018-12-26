@@ -5,5 +5,3 @@
 ### 2 run ./train.py to train Yolo V2 network
 
 ### 3 run ./detect.py to detect box in jpg picture
-
-
