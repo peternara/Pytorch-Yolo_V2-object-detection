@@ -109,10 +109,3 @@ class Yolo_V2(nn.Module):
 
     def clip_weight(params):
         torch.nn.utils.clip_grad_value_(params, 0.01)
-
-if __name__ == '__main__':
-    net = Yolo_V2()
-    x = torch.FloatTensor(np.random.uniform(-1,1,size=(1,3,224,224)))
-    cond,offset = net(x)
-    print(cond.shape)
-    print(offset.shape)
