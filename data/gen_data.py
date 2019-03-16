@@ -36,7 +36,6 @@ class gen_Data:
         for i in range(len(self.xml_list)):
             print(i,"-----------------------")
             xml_file = self.xml_list[i]
-            # xml_file = r"D:\Deep_Learning_data\yolo\gen_data\test_xml\2007_000323.xml"
             root = ET.parse(xml_file).getroot()
             img_name = root.find("filename").text
             img_path_filename = os.path.join(self.img_path,img_name)
@@ -53,10 +52,8 @@ class gen_Data:
             try:
                 save_file = open(self.save_txt, "a+")
                 try:
-                    # 保存224x224的图片
                     for obj in root.iter("object"):
                         box_type = obj.find("name").text
-                        # print(box_type)
                         list_type.append(box_type)
                         x1 = int(int(obj.find("bndbox/xmin").text) * 224 / img_width)
                         y1 = int(int(obj.find("bndbox/ymin").text) * 224 / img_height)
@@ -95,7 +92,6 @@ class gen_Data:
                         boxes.append([_c_24_x1,_c_24_y1,_c_24_x2,_c_24_y2])
                         boxes.append([_c_32_x1,_c_32_y1,_c_32_x2,_c_32_y2])
 
-                        # 调整宽，调整x
                         _w_1_x1 = box_cx - 24            
                         _w_1_y1 = box_cx - 8
                         _w_1_x2 = box_cx + 24
@@ -115,7 +111,6 @@ class gen_Data:
                         boxes.append([_w_2_x1,_w_2_y1,_w_2_x2,_w_2_y2])
                         boxes.append([_w_3_x1,_w_3_y1,_w_3_x2,_w_3_y2])
 
-                        # 调整高，调整y
                         _h_1_x1 = box_cx - 8            
                         _h_1_y1 = box_cx - 24
                         _h_1_x2 = box_cx + 8
