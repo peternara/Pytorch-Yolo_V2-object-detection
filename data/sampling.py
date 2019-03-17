@@ -45,14 +45,3 @@ class MyDataset(data.Dataset):
     def get_batch(self,dataload):
         dataiter = iter(dataload)
         return dataiter.next()
-
-if __name__ == '__main__':
-    label_txt = r"label txt"
-
-    # mydataset = MyDataset(label_txt)
-    # dataloader = data.DataLoader(mydataset, batch_size=1, shuffle=False)
-    # for i in range(2):
-    #     img,cond,offset = mydataset.get_batch(dataloader)
-    #     print(img.shape)
-    #     print(cond.shape)
-    #     print(offset.shape)
