@@ -58,7 +58,7 @@ class Detect:
             box = [cx - 24, cy - 8, cx + 24, cy + 8]
             x1, y1, x2, y2 = self.get_box_value(box, offset)
         if c == 4:
-            box = [cx - 48, cy - 16, cx + 28, cy + 16]
+            box = [cx - 48, cy - 16, cx + 48, cy + 16]
             x1, y1, x2, y2 = self.get_box_value(box, offset)
         if c == 5:
             box = [cx - 96, cy - 32, cx + 96, cy + 32]
